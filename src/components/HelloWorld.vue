@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <canvas id="canvas" />
+    <img id="img" />
   </div>
 </template>
 
@@ -16,6 +17,9 @@ export default {
       qrcode.toCanvas(canvas,"mixin",error=>{
         console.log(error)
       })
+      let img = document.getElementById('img');
+      let url = canvas.toDataURL();
+      img.src = url;
   }
 }
 </script>
